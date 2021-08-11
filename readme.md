@@ -10,7 +10,7 @@ Include the following scripts:
 
 Apply the following classes to the relevant elements on the page.
 
-# filter-key
+## filter-key
 
 Apply the filter key class to the elements that can be clicked and has text as its content.
 This can be a link inside of a collection list.
@@ -19,7 +19,7 @@ This can be a link inside of a collection list.
 <a href="#" class="filter-key">Category</a>
 ```
 
-# filter-all
+## filter-all
 
 Apply the filter in addition to the filter-key to the element that can be clicked and has text as its content.
 
@@ -27,7 +27,7 @@ Apply the filter in addition to the filter-key to the element that can be clicke
 <a href="#" class="filter-key filter-all">All</a>
 ```
 
-# filter-items
+## filter-items
 
 Apply this class to the wrapper around the item to be filtered.
 This could be the collection list wrapper.
@@ -36,7 +36,7 @@ This could be the collection list wrapper.
 <div class="filter-items"></div>
 ```
 
-# filter-item
+## filter-item
 
 Apply this class to the item inside the wrapper.
 
@@ -46,7 +46,7 @@ Apply this class to the item inside the wrapper.
 </div>
 ```
 
-# filter-value
+## filter-value
 
 Apply this class to an element inside the filter item that represents the value to filter by.
 The element should have text that corresponds to the filter-key
