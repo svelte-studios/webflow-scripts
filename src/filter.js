@@ -18,7 +18,7 @@ const convToFilter = function (str) {
 const containerEl = document.querySelector(filterItemsSelector);
 
 $(filterKeySelector).each(function () {
-  const filterKeyText = "." + convToFilter($(this).text());
+  let filterKeyText = "." + convToFilter($(this).text());
   if ($(this).hasClass(filterAllClass)) filterKeyText = "all";
   $(this).attr("data-filter", filterKeyText);
 });
