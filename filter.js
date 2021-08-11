@@ -1,7 +1,5 @@
 "use strict";
 
-function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
-
 var filterAllClass = "filter-all";
 var filterKeySelector = ".filter-key";
 var filterItemsSelector = ".filter-items";
@@ -19,7 +17,7 @@ var convToFilter = function convToFilter(str) {
 var containerEl = document.querySelector(filterItemsSelector);
 $(filterKeySelector).each(function () {
   var filterKeyText = "." + convToFilter($(this).text());
-  if ($(this).hasClass(filterAllClass)) "all", _readOnlyError("filterKeyText");
+  if ($(this).hasClass(filterAllClass)) filterKeyText = "all";
   $(this).attr("data-filter", filterKeyText);
 });
 $(filterValueSelector).each(function () {
