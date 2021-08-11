@@ -1,8 +1,6 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-var _readOnlyError2 = _interopRequireDefault(require("@babel/runtime/helpers/readOnlyError"));
+function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
 
 var filterAllClass = "filter-all";
 var filterKeySelector = ".filter-key";
@@ -21,7 +19,7 @@ var convToFilter = function convToFilter(str) {
 var containerEl = document.querySelector(filterItemsSelector);
 $(filterKeySelector).each(function () {
   var filterKeyText = "." + convToFilter($(this).text());
-  if ($(this).hasClass(filterAllClass)) "all", (0, _readOnlyError2["default"])("filterKeyText");
+  if ($(this).hasClass(filterAllClass)) "all", _readOnlyError("filterKeyText");
   $(this).attr("data-filter", filterKeyText);
 });
 $(filterValueSelector).each(function () {
