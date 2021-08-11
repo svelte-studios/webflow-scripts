@@ -56,3 +56,11 @@ Each filter-item can have many filter-value elements.
 <div class="filter-value">Category1</div>
 <div class="filter-value">Category2</div>
 ```
+
+## apply the initial filter
+
+When navigating to a page you can apply a filter by supplying a filter querystring parameter.
+
+```
+<a href="/page?filter=category">Link to page</a>
+```
