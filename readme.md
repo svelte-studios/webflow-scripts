@@ -1,5 +1,7 @@
 # Filtering
 
+Similar solution: https://webflow.com/blog/dynamic-filtering-and-sorting
+
 Include the following scripts:
 
 ```
