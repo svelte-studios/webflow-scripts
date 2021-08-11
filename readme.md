@@ -27,7 +27,32 @@ Apply the filter in addition to the filter-key to the element that can be clicke
 <a href="#" class="filter-key filter-all">All</a>
 ```
 
-1. "filter-key" + "filter-all"
-2. "filter-items"
-3. "filter-item"
-4. "filter-value"
+# filter-items
+
+Apply this class to the wrapper around the item to be filtered.
+This could be the collection list wrapper.
+
+```
+<div class="filter-items"></div>
+```
+
+# filter-item
+
+Apply this class to the item inside the wrapper.
+
+```
+<div class="news-articles filter-items">
+    <div class="news-cms-item filter-item"></div>
+</div>
+```
+
+# filter-value
+
+Apply this class to an element inside the filter item that represents the value to filter by.
+The element should have text that corresponds to the filter-key
+Each filter-item can have many filter-value elements.
+
+```
+<div class="filter-value">Category1</div>
+<div class="filter-value">Category2</div>
+```
