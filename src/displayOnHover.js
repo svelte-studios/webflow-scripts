@@ -11,19 +11,17 @@ $(featureListItemSelector).mouseenter(function () {
   $(featureListContent)
     .children()
     .each(function () {
-      console.log(
-        "🚀 ~ file: displayOnHover.js ~ line 17 ~ this.index()",
-        $(this).index()
-      );
       if ($(this).css("display") !== "none") $(this).css({ display: "none" });
-      if ($(this).hasClass(activeItemClass))
+      if ($(this).hasClass(activeItemClass)) {
+        console.log(
+          "🚀 ~ file: displayOnHover.js ~ line 20 ~ $(this).hasClass(activeItemClass)",
+          $(this).hasClass(activeItemClass)
+        );
+
         $(this).removeClass(activeItemClass);
+      }
     });
 
-  console.log(
-    "🚀 ~ file: displayOnHover.js ~ line 20 ~ $(featureListContent).children().eq(listItemIndex).index()",
-    $(featureListContent).children().eq(listItemIndex).index()
-  );
   $(featureListContent).children().eq(listItemIndex).css({ display: "block" });
   $(featureListContainerSelector)
     .children()
