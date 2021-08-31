@@ -77,11 +77,40 @@ Include the following scripts:
 
 Apply the following classes to the relevant elements on the page.
 
-## filter-key
+## feature-list-item
 
-Apply the filter key class to the elements that can be clicked and has text as its content.
-This can be a link inside of a collection list.
+Apply the feature list item to the hoverable items.
 
 ```
-<a href="#" class="filter-key">Category</a>
+<div class="feature-list-item">Item #1</div>
+```
+
+## feature-list
+
+Apply the feature list class to the container of the feature-list-item children.
+
+```
+<div class="feature-list">
+    <div class="feature-list-item">
+        Item #1
+    </div>
+    <div class="feature-list-item">
+        Item #2
+    </div>
+</div>
+```
+
+## featured-content
+
+Apple the featured content class to the container of the contents that is supposed to display on hover
+
+```
+<div class="featured-content">
+    <div>
+        Item #1 Content
+    </div>
+     <div>
+        Item #2 Content
+    </div>
+</div>
 ```
