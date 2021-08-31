@@ -3,7 +3,7 @@
 var featureListItemSelector = ".featurelistitem";
 var featureListContent = ".featurelistcontent";
 var featureListContainerSelector = ".featurelistcontainer";
-var activeItemClass = ".active";
+var activeItemClass = "active";
 $(featureListContent).children().eq(0).css({
   display: "block"
 });
