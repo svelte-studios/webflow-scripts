@@ -12,6 +12,11 @@ $(featureListItemSelector).mouseenter(function () {
     .children()
     .each(function () {
       if ($(this).css("display") !== "none") $(this).css({ display: "none" });
+    });
+
+  $(featureListContainerSelector)
+    .children()
+    .each(function () {
       if ($(this).hasClass(activeItemClass)) {
         console.log(
           "🚀 ~ file: displayOnHover.js ~ line 20 ~ $(this).hasClass(activeItemClass)",
