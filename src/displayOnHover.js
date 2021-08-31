@@ -1,7 +1,9 @@
 const featureListItemSelector = ".featurelistitem";
 const featureListContent = ".featurelistcontent";
+const featureListContainerSelector = ".featurelistcontainer";
+const activeItemClass = ".active";
 
-const contentContainerEl = document.querySelector(featureListContent);
+$(featureListContent).children().eq(0).css({ display: "block" });
 
 $(featureListItemSelector).mouseenter(function () {
   const listItemIndex = $(this).index();
@@ -14,6 +16,8 @@ $(featureListItemSelector).mouseenter(function () {
         $(this).index()
       );
       if ($(this).css("display") !== "none") $(this).css({ display: "none" });
+      if ($(this).hasClass(activeItemClass))
+        $(this).removeClass(activeItemClass);
     });
 
   console.log(
@@ -21,4 +25,8 @@ $(featureListItemSelector).mouseenter(function () {
     $(featureListContent).children().eq(listItemIndex).index()
   );
   $(featureListContent).children().eq(listItemIndex).css({ display: "block" });
+  $(featureListContainerSelector)
+    .children()
+    .eq(listItemIndex)
+    .addClass(activeItemClass);
 });
