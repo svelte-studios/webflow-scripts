@@ -91,7 +91,7 @@ Apply the feature list class to the container of the feature-list-item children.
 
 ```
 <div class="feature-list">
-    <div class="feature-list-item">
+    <div class="feature-list-item active">
         Item #1
     </div>
     <div class="feature-list-item">
@@ -100,9 +100,13 @@ Apply the feature list class to the container of the feature-list-item children.
 </div>
 ```
 
+## active
+
+Apply the active class to the feature-list-item that should show it's content by default. Be sure to apply styles to the active class via webflow to customise the look of the hovered list item
+
 ## featured-content
 
-Apple the featured content class to the container of the contents that is supposed to display on hover
+Apply the featured content class to the container of the contents that is supposed to display on hover
 
 ```
 <div class="featured-content">
