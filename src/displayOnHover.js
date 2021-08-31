@@ -3,7 +3,7 @@ const featureListContent = ".featurelistcontent";
 
 const contentContainerEl = document.querySelector(featureListContent);
 
-$(featureListItemSelector).hover(function () {
+$(featureListItemSelector).mouseenter(function () {
   const listItemIndex = $(this).index();
 
   $(featureListContent)
