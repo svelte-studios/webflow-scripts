@@ -3,7 +3,7 @@
 var featureListItemSelector = ".featurelistitem";
 var featureListContent = ".featurelistcontent";
 var contentContainerEl = document.querySelector(featureListContent);
-$(featureListItemSelector).hover(function () {
+$(featureListItemSelector).mouseenter(function () {
   var listItemIndex = $(this).index();
   $(featureListContent).children().each(function () {
     console.log("🚀 ~ file: displayOnHover.js ~ line 17 ~ this.index()", $(this).index());
