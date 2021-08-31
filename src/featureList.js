@@ -1,6 +1,6 @@
-const featureListItemSelector = ".featurelistitem";
-const featuredContentSelector = ".featuredcontent";
-const featureListSelector = ".featurelist";
+const featureListItemSelector = ".feature-list-item";
+const featuredContentSelector = ".featured-content";
+const featureListSelector = ".feature-list";
 const activeItemClass = "active";
 
 $(featuredContentSelector).children().eq(0).css({ display: "block" });
