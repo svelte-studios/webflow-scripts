@@ -1,8 +1,8 @@
 "use strict";
 
-var featureListItemSelector = ".featurelistitem";
-var featuredContentSelector = ".featuredcontent";
-var featureListSelector = ".featurelist";
+var featureListItemSelector = ".feature-list-item";
+var featuredContentSelector = ".featured-content";
+var featureListSelector = ".feature-list";
 var activeItemClass = "active";
 $(featuredContentSelector).children().eq(0).css({
   display: "block"
