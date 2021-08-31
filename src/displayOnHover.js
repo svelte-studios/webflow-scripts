@@ -1,7 +1,7 @@
 const featureListItemSelector = ".featurelistitem";
 const featureListContent = ".featurelistcontent";
 const featureListContainerSelector = ".featurelistcontainer";
-const activeItemClass = ".active";
+const activeItemClass = "active";
 
 $(featureListContent).children().eq(0).css({ display: "block" });
 
