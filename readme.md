@@ -118,3 +118,12 @@ Apply the featured content class to the container of the contents that is suppos
     </div>
 </div>
 ```
+
+# Load More
+
+Include the following scripts:
+
+```
+<script src="https://cdn.finsweet.com/files/cmslibrary-v1.8.js"></script>
+<script src="https://svelte-studios.github.io/webflow-scripts/loadMore.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+```
