@@ -25,7 +25,8 @@ $(filterValueSelector).each(function () {
   $(this).closest(filterItemSelector).addClass(filterKeyText);
 });
 $(filterKeySelector).click(function () {
-  console.log("🚀 ~ file: filterToggle.js ~ line 29 ~ $(this)", $(this));
+  $(this).attr("data-filter");
+  console.log("🚀 ~ file", $(this).attr("data-filter"));
 });
 
 var initialFilter = function initialFilter() {
