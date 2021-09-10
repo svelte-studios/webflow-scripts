@@ -1,6 +1,5 @@
 "use strict";
 
-var filterAllClass = "filter-all";
 var filterKeySelector = ".filter-toggle-key";
 var filterItemsSelector = ".filter-toggle-items";
 var filterItemSelector = ".filter-toggle-item";
@@ -22,10 +21,8 @@ $(filterKeySelector).each(function () {
 $(filterValueSelector).each(function () {
   var keys = $(this).text().split(",");
   var elementToAddClass = $(this).closest(filterItemSelector);
-  console.log("🚀 ~ file: filterToggle.js ~ line 28 ~ keys", keys);
   keys.forEach(function (i) {
     var filterKeyText = convToFilter(i);
-    console.log("🚀 ~ filterKeyText", filterKeyText);
     elementToAddClass.addClass(filterKeyText);
   });
 });
