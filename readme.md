@@ -72,6 +72,62 @@ When navigating to a page you can apply a filter by supplying a filter querystri
 Include the following scripts:
 
 ```
+<script src="https://svelte-studios.github.io/webflow-scripts/filterToggle.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+```
+
+## filter-toggle-key
+
+Apply the feature toggle key to the filter button. The text inside this div will be what is filtering the items.
+
+```
+<div class="filter-toggle-key">Filter By this</div>
+```
+
+## feature-toggle-item
+
+Apply the feature list item in the list.
+
+```
+<div class="feature-list-item">Item #1</div>
+```
+
+## feature-toggle-value
+
+Apply the feature toggle value item in the list. The text inside this div will be what is used to see if this item meets the params of the filter.
+
+```
+<div class="feature-list-item">
+    <div class="feature-toggle-value">
+        This item belongs to this filter.
+    </div>
+</div>
+```
+
+## feature-toggle-item
+
+Apply the feature list class to the container of the feature-list-item children.
+
+```
+<div class="feature-list">
+    <div class="feature-list-item active">
+        Item #1
+    </div>
+    <div class="feature-list-item">
+        Item #2
+    </div>
+</div>
+```
+
+## active
+
+Apply the active class to the feature-list-item that should show it's content by default. Be sure to apply styles to the active class via webflow to customise the look of the hovered list item
+
+# Feature List
+
+Include the following scripts:
+
+```
 <script src="https://svelte-studios.github.io/webflow-scripts/featureList.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 ```
 
