@@ -24,13 +24,15 @@ $(filterKeySelector).each(function () {
 
 $(filterValueSelector).each(function () {
   const filterKeyText = convToFilter($(this).text());
-  // $(this).closest(filterItemSelector).addClass(filterKeyText);
-  $(this).closest(filterItemSelector).attr("data-filter", filterKeyText);
+  $(this).closest(filterItemSelector).addClass(filterKeyText);
+  // $(this).closest(filterItemSelector).attr("data-filter", filterKeyText);
 });
 
 $(filterKeySelector).click(function () {
-  $(this).attr("data-filter");
-  console.log("🚀 ~ file", $(this).attr("data-filter"));
+  const filterValueClicked = $(this).attr("data-filter");
+  $(`${filterItemSelector}.${filterValueClicked}`).addClass(
+    ".filter-toggle-hide"
+  );
 });
 
 const initialFilter = function () {
