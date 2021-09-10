@@ -26,7 +26,6 @@ $(filterValueSelector).each(function () {
 $(filterKeySelector).click(function () {
   var filterValueClicked = $(this).attr("data-filter");
   var classVar = "".concat(filterItemSelector).concat(filterValueClicked);
-  console.log("🚀 ~ file: filterToggle.js ~ line 34 ~ classVar", classVar);
 
   if ($(this).hasClass("active")) {
     $(this).removeClass("active");
@@ -36,7 +35,7 @@ $(filterKeySelector).click(function () {
   $(filterKeySelector).each(function () {
     if ($(this).hasClass("active")) {
       $(this).removeClass("active");
-      return $(classVar).removeClass("filter-toggle-hide");
+      return $("".concat(filterItemSelector).concat($(this).attr("data-filter"))).removeClass("filter-toggle-hide");
     }
   });
   $(this).addClass("active");
