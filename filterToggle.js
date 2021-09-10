@@ -25,20 +25,22 @@ $(filterValueSelector).each(function () {
 });
 $(filterKeySelector).click(function () {
   var filterValueClicked = $(this).attr("data-filter");
+  var classVar = "".concat(filterItemSelector).concat(filterValueClicked);
+  console.log("🚀 ~ file: filterToggle.js ~ line 34 ~ classVar", classVar);
 
   if ($(this).hasClass("active")) {
     $(this).removeClass("active");
-    return $("".concat(filterItemSelector).concat(filterValueClicked)).removeClass("filter-toggle-hide");
+    return $(classVar).removeClass("filter-toggle-hide");
   }
 
   $(filterKeySelector).each(function () {
     if ($(this).hasClass("active")) {
       $(this).removeClass("active");
-      return $("".concat(filterItemSelector).concat(filterValueClicked)).removeClass("filter-toggle-hide");
+      return $(classVar).removeClass("filter-toggle-hide");
     }
   });
   $(this).addClass("active");
-  $("".concat(filterItemSelector).concat(filterValueClicked)).addClass("filter-toggle-hide");
+  $(classVar).addClass("filter-toggle-hide");
 });
 
 var initialFilter = function initialFilter() {
