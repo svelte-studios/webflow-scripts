@@ -25,7 +25,6 @@ $(filterKeySelector).each(function () {
 $(filterValueSelector).each(function () {
   const filterKeyText = convToFilter($(this).text());
   $(this).closest(filterItemSelector).addClass(filterKeyText);
-  // $(this).closest(filterItemSelector).attr("data-filter", filterKeyText);
 });
 
 $(filterKeySelector).click(function () {
@@ -35,16 +34,24 @@ $(filterKeySelector).click(function () {
     $(this).removeClass("active");
     return $(classVar).removeClass("filter-toggle-hide");
   }
-  $(filterKeySelector).each(function () {
-    if ($(this).hasClass("active")) {
-      $(this).removeClass("active");
-      return $(
-        `${filterItemSelector}${$(this).attr("data-filter")}`
-      ).removeClass("filter-toggle-hide");
-    }
-  });
+  // $(filterKeySelector).each(function () {
+  //   if ($(this).hasClass("active")) {
+  //     $(this).removeClass("active");
+  //     $(filterItemSelector).each(function () {
+  //       if ($(this).hasClass(filterValueClicked)) return;
+  //       $(this).removeClass("filter-toggle-hide");
+  //     });
+
+  //     return $(
+  //       `${filterItemSelector}${$(this).attr("data-filter")}`
+  //     ).removeClass("filter-toggle-hide") ;
+  //   }
+  // });
   $(this).addClass("active");
-  $(classVar).addClass("filter-toggle-hide");
+  $(filterItemSelector).each(function () {
+    if ($(this).hasClass(classVar)) return;
+    $(this).addClass("filter-toggle-hide");
+  });
 });
 
 const initialFilter = function () {
