@@ -1,8 +1,8 @@
 const filterAllClass = `filter-all`;
 const filterKeySelector = `.filter-toggle-key`;
-const filterItemsSelector = `.filter-items`;
-const filterItemSelector = `.filter-item`;
-const filterValueSelector = `.filter-value`;
+const filterItemsSelector = `.filter-toggle-items`;
+const filterItemSelector = `.filter-toggle-item`;
+const filterValueSelector = `.filter-toggle-value`;
 
 const convToFilter = function (str) {
   if (!str) {
@@ -19,14 +19,18 @@ const containerEl = document.querySelector(filterItemsSelector);
 
 $(filterKeySelector).each(function () {
   let filterKeyText = "." + convToFilter($(this).text());
-  console.log("🚀 ~ filterKeyText", filterKeyText);
   $(this).attr("data-filter", filterKeyText);
 });
 
 $(filterValueSelector).each(function () {
   const filterKeyText = convToFilter($(this).text());
+  console.log(
+    "🚀 ~ file: filterToggle.js ~ line 28 ~ filterKeyText",
+    filterKeyText
+  );
   $(this).closest(filterItemSelector).addClass(filterKeyText);
 });
+
 $(filterKeySelector).click(function () {
   $(this).attr("data-filter");
   console.log("🚀 ~ file", $(this).attr("data-filter"));
