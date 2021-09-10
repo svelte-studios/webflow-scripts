@@ -31,12 +31,13 @@ $(filterValueSelector).each(function () {
 $(filterKeySelector).click(function () {
   const filterValueClicked = $(this).attr("data-filter");
 
-  if ($(this).hasClass(filterValueClicked)) {
+  if ($(this).hasClass("toggled-on")) {
+    $(this).removeClass("toggled-on");
     return $(`${filterItemSelector}${filterValueClicked}`).removeClass(
       "filter-toggle-hide"
     );
   }
-
+  $(this).addClass("toggled-on");
   $(`${filterItemSelector}${filterValueClicked}`).addClass(
     "filter-toggle-hide"
   );
