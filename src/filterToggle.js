@@ -24,8 +24,9 @@ $(filterKeySelector).each(function () {
 
 $(filterValueSelector).each(function () {
   const filterKeyText = convToFilter($(this).text());
-  filterKeyText.split(",");
-  filterKeyText.forEach(function (i) {
+  const keys = filterKeyText.split(",");
+  console.log("🚀 ~ file: filterToggle.js ~ line 28 ~ keys", keys);
+  keys.forEach(function (i) {
     $(this).closest(filterItemSelector).addClass(i);
   });
 });
