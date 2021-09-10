@@ -23,14 +23,13 @@ $(filterKeySelector).each(function () {
 });
 
 $(filterValueSelector).each(function () {
-  const filterKeyText = convToFilter($(this).text());
-  console.log("🚀 ~ file: filterKeyText", filterKeyText);
-  const keys = filterKeyText.split(",");
+  const keys = $(this).text().split(",");
   const elementToAddClass = $(this).closest(filterItemSelector);
   console.log("🚀 ~ file: filterToggle.js ~ line 28 ~ keys", keys);
   keys.forEach(function (i) {
-    console.log("🚀 ~ file: filterToggle.js ~ line 30 ~ i", i);
-    elementToAddClass.addClass(i);
+    const filterKeyText = convToFilter(i);
+    console.log("🚀 ~ filterKeyText", filterKeyText);
+    elementToAddClass.addClass(filterKeyText);
   });
 });
 
