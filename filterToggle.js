@@ -32,7 +32,10 @@ $(filterKeySelector).click(function () {
   }
 
   $(filterKeySelector).each(function () {
-    $(this).removeClass("active");
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active");
+      return $("".concat(filterItemSelector).concat(filterValueClicked)).removeClass("filter-toggle-hide");
+    }
   });
   $(this).addClass("active");
   $("".concat(filterItemSelector).concat(filterValueClicked)).addClass("filter-toggle-hide");
