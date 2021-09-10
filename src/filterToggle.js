@@ -32,7 +32,7 @@ $(filterKeySelector).click(function () {
   const classVar = `${filterItemSelector}${filterValueClicked}`;
   if ($(this).hasClass("active")) {
     $(this).removeClass("active");
-    return $(classVar).removeClass("filter-toggle-hide");
+    return $(filterItemSelector).removeClass("filter-toggle-hide");
   }
   // $(filterKeySelector).each(function () {
   //   if ($(this).hasClass("active")) {
@@ -47,15 +47,19 @@ $(filterKeySelector).click(function () {
   //     ).removeClass("filter-toggle-hide") ;
   //   }
   // });
+  toggleFilter(classVar);
   $(this).addClass("active");
-  $(filterItemSelector).each(function () {
-    console.log("🚀 ~  classVar", classVar);
-    if ($(this).hasClass(classVar)) {
-      return $(this).removeClass("filter-toggle-hide");
-    }
-    $(this).addClass("filter-toggle-hide");
-  });
 });
+
+const toggleFilter = (classVar) => {
+  $(filterItemSelector).each(function () {
+    if ($(this).hasClass(classVar)) {
+      $(this).removeClass("filter-toggle-hide");
+    } else {
+      $(this).addClass("filter-toggle-hide");
+    }
+  });
+};
 
 const initialFilter = function () {
   if (url("?filter")) return "." + url("?filter");
