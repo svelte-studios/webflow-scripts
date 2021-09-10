@@ -37,6 +37,9 @@ $(filterKeySelector).click(function () {
       "filter-toggle-hide"
     );
   }
+  $(filterKeySelector).each(function () {
+    $(this).removeClass("active");
+  });
   $(this).addClass("active");
   $(`${filterItemSelector}${filterValueClicked}`).addClass(
     "filter-toggle-hide"
