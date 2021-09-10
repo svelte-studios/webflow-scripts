@@ -32,7 +32,7 @@ $(filterValueSelector).each(function () {
   });
 });
 
-$(filterKeySelector).mouseIn(function () {
+$(filterKeySelector).mouseenter(function () {
   const filterValueClicked = $(this).attr("data-filter");
   if ($(this).hasClass("active")) {
     $(this).removeClass("active");
