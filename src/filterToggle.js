@@ -54,7 +54,7 @@ $(filterKeySelector).click(function () {
 const toggleFilter = (classVar) => {
   $(filterItemSelector).each(function () {
     console.log("🚀 ~ classVar", classVar);
-    if ($(this).hasClass(classVar)) {
+    if ($(this).hasClass(classVar.substring(1, classVar.length))) {
       console.log("🚀 ~ file: filterToggle.js ~ line 58 ~ $(this)", $(this));
       $(this).removeClass("filter-toggle-hide");
     } else {
