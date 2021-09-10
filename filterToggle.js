@@ -26,12 +26,12 @@ $(filterValueSelector).each(function () {
 $(filterKeySelector).click(function () {
   var filterValueClicked = $(this).attr("data-filter");
 
-  if ($(this).hasClass("toggled-on")) {
-    $(this).removeClass("toggled-on");
+  if ($(this).hasClass("active")) {
+    $(this).removeClass("active");
     return $("".concat(filterItemSelector).concat(filterValueClicked)).removeClass("filter-toggle-hide");
   }
 
-  $(this).addClass("toggled-on");
+  $(this).addClass("active");
   $("".concat(filterItemSelector).concat(filterValueClicked)).addClass("filter-toggle-hide");
 });
 
