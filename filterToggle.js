@@ -44,7 +44,7 @@ $(filterKeySelector).click(function () {
   // });
 
 
-  toggleFilter(classVar);
+  toggleFilter(filterValueClicked);
   $(this).addClass("active");
 });
 
