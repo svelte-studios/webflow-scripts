@@ -38,7 +38,12 @@ $(filterKeySelector).click(function () {
     );
   }
   $(filterKeySelector).each(function () {
-    $(this).removeClass("active");
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active");
+      return $(`${filterItemSelector}${filterValueClicked}`).removeClass(
+        "filter-toggle-hide"
+      );
+    }
   });
   $(this).addClass("active");
   $(`${filterItemSelector}${filterValueClicked}`).addClass(
