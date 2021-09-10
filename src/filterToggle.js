@@ -25,8 +25,8 @@ $(filterKeySelector).each(function () {
 $(filterValueSelector).each(function () {
   const filterKeyText = convToFilter($(this).text());
   filterKeyText.split(",");
-  filterKeyText.each(function () {
-    $(this).closest(filterItemSelector).addClass(filterKeyText);
+  filterKeyText.forEach(function (i) {
+    $(this).closest(filterItemSelector).addClass(i);
   });
 });
 
