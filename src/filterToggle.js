@@ -24,12 +24,14 @@ $(filterKeySelector).each(function () {
 
 $(filterValueSelector).each(function () {
   const filterKeyText = convToFilter($(this).text());
-  $(this).closest(filterItemSelector).addClass(filterKeyText);
+  filterKeyText.split(",");
+  filterKeyText.each(function () {
+    $(this).closest(filterItemSelector).addClass(filterKeyText);
+  });
 });
 
-$(filterKeySelector).click(function () {
+$(filterKeySelector).hover(function () {
   const filterValueClicked = $(this).attr("data-filter");
-  const classVar = `${filterItemSelector}${filterValueClicked}`;
   if ($(this).hasClass("active")) {
     $(this).removeClass("active");
     return $(filterItemSelector).removeClass("filter-toggle-hide");
@@ -39,15 +41,6 @@ $(filterKeySelector).click(function () {
       $(this).removeClass("active");
       toggleFilter("");
       return;
-
-      // $(filterItemSelector).each(function () {
-      //   if ($(this).hasClass(filterValueClicked)) return;
-      //   $(this).removeClass("filter-toggle-hide");
-      // });
-
-      // return $(
-      //   `${filterItemSelector}${$(this).attr("data-filter")}`
-      // ).removeClass("filter-toggle-hide") ;
     }
   });
   toggleFilter(filterValueClicked);
