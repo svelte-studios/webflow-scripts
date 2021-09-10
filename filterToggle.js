@@ -28,7 +28,7 @@ $(filterValueSelector).each(function () {
     $(this).closest(filterItemSelector).addClass(i);
   });
 });
-$(filterKeySelector).hoverIn(function () {
+$(filterKeySelector).mouseIn(function () {
   var filterValueClicked = $(this).attr("data-filter");
 
   if ($(this).hasClass("active")) {
