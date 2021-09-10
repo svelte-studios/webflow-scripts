@@ -21,11 +21,13 @@ $(filterKeySelector).each(function () {
 });
 $(filterValueSelector).each(function () {
   var filterKeyText = convToFilter($(this).text());
+  console.log("🚀 ~ file: filterKeyText", filterKeyText);
   var keys = filterKeyText.split(",");
+  var elementToAddClass = $(this).closest(filterItemSelector);
   console.log("🚀 ~ file: filterToggle.js ~ line 28 ~ keys", keys);
   keys.forEach(function (i) {
     console.log("🚀 ~ file: filterToggle.js ~ line 30 ~ i", i);
-    $(this).closest(filterItemSelector).addClass(i);
+    elementToAddClass.addClass(i);
   });
 });
 $(filterKeySelector).mouseenter(function () {
