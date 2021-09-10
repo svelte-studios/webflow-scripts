@@ -27,11 +27,12 @@ $(filterValueSelector).each(function () {
   const keys = filterKeyText.split(",");
   console.log("🚀 ~ file: filterToggle.js ~ line 28 ~ keys", keys);
   keys.forEach(function (i) {
+    console.log("🚀 ~ file: filterToggle.js ~ line 30 ~ i", i);
     $(this).closest(filterItemSelector).addClass(i);
   });
 });
 
-$(filterKeySelector).hover(function () {
+$(filterKeySelector).hoverIn(function () {
   const filterValueClicked = $(this).attr("data-filter");
   if ($(this).hasClass("active")) {
     $(this).removeClass("active");
