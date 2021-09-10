@@ -2,9 +2,9 @@
 
 var filterAllClass = "filter-all";
 var filterKeySelector = ".filter-toggle-key";
-var filterItemsSelector = ".filter-items";
-var filterItemSelector = ".filter-item";
-var filterValueSelector = ".filter-value";
+var filterItemsSelector = ".filter-toggle-items";
+var filterItemSelector = ".filter-toggle-item";
+var filterValueSelector = ".filter-toggle-value";
 
 var convToFilter = function convToFilter(str) {
   if (!str) {
@@ -17,11 +17,11 @@ var convToFilter = function convToFilter(str) {
 var containerEl = document.querySelector(filterItemsSelector);
 $(filterKeySelector).each(function () {
   var filterKeyText = "." + convToFilter($(this).text());
-  console.log("🚀 ~ filterKeyText", filterKeyText);
   $(this).attr("data-filter", filterKeyText);
 });
 $(filterValueSelector).each(function () {
   var filterKeyText = convToFilter($(this).text());
+  console.log("🚀 ~ file: filterToggle.js ~ line 28 ~ filterKeyText", filterKeyText);
   $(this).closest(filterItemSelector).addClass(filterKeyText);
 });
 $(filterKeySelector).click(function () {
