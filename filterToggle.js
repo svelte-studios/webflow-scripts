@@ -20,14 +20,13 @@ $(filterKeySelector).each(function () {
   $(this).attr("data-filter", filterKeyText);
 });
 $(filterValueSelector).each(function () {
-  var filterKeyText = convToFilter($(this).text());
-  console.log("🚀 ~ file: filterKeyText", filterKeyText);
-  var keys = filterKeyText.split(",");
+  var keys = $(this).text().split(",");
   var elementToAddClass = $(this).closest(filterItemSelector);
   console.log("🚀 ~ file: filterToggle.js ~ line 28 ~ keys", keys);
   keys.forEach(function (i) {
-    console.log("🚀 ~ file: filterToggle.js ~ line 30 ~ i", i);
-    elementToAddClass.addClass(i);
+    var filterKeyText = convToFilter(i);
+    console.log("🚀 ~ filterKeyText", filterKeyText);
+    elementToAddClass.addClass(filterKeyText);
   });
 });
 $(filterKeySelector).mouseenter(function () {
