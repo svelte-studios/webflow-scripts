@@ -25,7 +25,7 @@ $(filterValueSelector).each(function () {
 });
 $(filterKeySelector).click(function () {
   var filterValueClicked = $(this).attr("data-filter");
-  $("".concat(filterItemSelector, ".").concat(filterValueClicked)).addClass(".filter-toggle-hide");
+  $("".concat(filterItemSelector).concat(filterValueClicked)).addClass(".filter-toggle-hide");
 });
 
 var initialFilter = function initialFilter() {
