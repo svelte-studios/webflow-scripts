@@ -21,11 +21,13 @@ $(filterKeySelector).each(function () {
 });
 $(filterValueSelector).each(function () {
   var filterKeyText = convToFilter($(this).text());
-  $(this).closest(filterItemSelector).addClass(filterKeyText);
+  filterKeyText.split(",");
+  filterKeyText.each(function () {
+    $(this).closest(filterItemSelector).addClass(filterKeyText);
+  });
 });
-$(filterKeySelector).click(function () {
+$(filterKeySelector).hover(function () {
   var filterValueClicked = $(this).attr("data-filter");
-  var classVar = "".concat(filterItemSelector).concat(filterValueClicked);
 
   if ($(this).hasClass("active")) {
     $(this).removeClass("active");
@@ -36,13 +38,7 @@ $(filterKeySelector).click(function () {
     if ($(this).hasClass("active")) {
       $(this).removeClass("active");
       toggleFilter("");
-      return; // $(filterItemSelector).each(function () {
-      //   if ($(this).hasClass(filterValueClicked)) return;
-      //   $(this).removeClass("filter-toggle-hide");
-      // });
-      // return $(
-      //   `${filterItemSelector}${$(this).attr("data-filter")}`
-      // ).removeClass("filter-toggle-hide") ;
+      return;
     }
   });
   toggleFilter(filterValueClicked);
