@@ -24,11 +24,8 @@ $(filterKeySelector).each(function () {
 
 $(filterValueSelector).each(function () {
   const filterKeyText = convToFilter($(this).text());
-  console.log(
-    "🚀 ~ file: filterToggle.js ~ line 28 ~ filterKeyText",
-    filterKeyText
-  );
-  $(this).closest(filterItemSelector).addClass(filterKeyText);
+  // $(this).closest(filterItemSelector).addClass(filterKeyText);
+  $(this).closest(filterItemSelector).attr("data-filter", filterKeyText);
 });
 
 $(filterKeySelector).click(function () {
