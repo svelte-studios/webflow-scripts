@@ -30,6 +30,13 @@ $(filterValueSelector).each(function () {
 
 $(filterKeySelector).click(function () {
   const filterValueClicked = $(this).attr("data-filter");
+
+  if ($(this).hasClass(filterValueClicked)) {
+    return $(`${filterItemSelector}${filterValueClicked}`).removeClass(
+      "filter-toggle-hide"
+    );
+  }
+
   $(`${filterItemSelector}${filterValueClicked}`).addClass(
     "filter-toggle-hide"
   );
