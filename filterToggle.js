@@ -31,6 +31,9 @@ $(filterKeySelector).click(function () {
     return $("".concat(filterItemSelector).concat(filterValueClicked)).removeClass("filter-toggle-hide");
   }
 
+  $(filterKeySelector).each(function () {
+    $(this).removeClass("active");
+  });
   $(this).addClass("active");
   $("".concat(filterItemSelector).concat(filterValueClicked)).addClass("filter-toggle-hide");
 });
