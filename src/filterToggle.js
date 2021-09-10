@@ -31,7 +31,7 @@ $(filterValueSelector).each(function () {
 $(filterKeySelector).click(function () {
   const filterValueClicked = $(this).attr("data-filter");
   $(`${filterItemSelector}${filterValueClicked}`).addClass(
-    ".filter-toggle-hide"
+    "filter-toggle-hide"
   );
 });
 
