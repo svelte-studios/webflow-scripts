@@ -30,30 +30,28 @@ $(filterKeySelector).click(function () {
   if ($(this).hasClass("active")) {
     $(this).removeClass("active");
     return $(filterItemSelector).removeClass("filter-toggle-hide");
-  } // $(filterKeySelector).each(function () {
-  //   if ($(this).hasClass("active")) {
-  //     $(this).removeClass("active");
-  //     $(filterItemSelector).each(function () {
-  //       if ($(this).hasClass(filterValueClicked)) return;
-  //       $(this).removeClass("filter-toggle-hide");
-  //     });
-  //     return $(
-  //       `${filterItemSelector}${$(this).attr("data-filter")}`
-  //     ).removeClass("filter-toggle-hide") ;
-  //   }
-  // });
+  }
 
-
+  $(filterKeySelector).each(function () {
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active");
+      toggleFilter("");
+      return; // $(filterItemSelector).each(function () {
+      //   if ($(this).hasClass(filterValueClicked)) return;
+      //   $(this).removeClass("filter-toggle-hide");
+      // });
+      // return $(
+      //   `${filterItemSelector}${$(this).attr("data-filter")}`
+      // ).removeClass("filter-toggle-hide") ;
+    }
+  });
   toggleFilter(filterValueClicked);
   $(this).addClass("active");
 });
 
 var toggleFilter = function toggleFilter(classVar) {
   $(filterItemSelector).each(function () {
-    console.log("🚀 ~ classVar", classVar);
-
     if ($(this).hasClass(classVar.substring(1, classVar.length))) {
-      console.log("🚀 ~ file: filterToggle.js ~ line 58 ~ $(this)", $(this));
       $(this).removeClass("filter-toggle-hide");
     } else {
       $(this).addClass("filter-toggle-hide");
