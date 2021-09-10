@@ -47,7 +47,7 @@ $(filterKeySelector).click(function () {
   //     ).removeClass("filter-toggle-hide") ;
   //   }
   // });
-  toggleFilter(classVar);
+  toggleFilter(filterValueClicked);
   $(this).addClass("active");
 });
 
