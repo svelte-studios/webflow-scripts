@@ -20,13 +20,12 @@ $(filterKeySelector).each(function () {
   $(this).attr("data-filter", filterKeyText);
 });
 $(filterValueSelector).each(function () {
-  var filterKeyText = convToFilter($(this).text()); // $(this).closest(filterItemSelector).addClass(filterKeyText);
-
-  $(this).closest(filterItemSelector).attr("data-filter", filterKeyText);
+  var filterKeyText = convToFilter($(this).text());
+  $(this).closest(filterItemSelector).addClass(filterKeyText); // $(this).closest(filterItemSelector).attr("data-filter", filterKeyText);
 });
 $(filterKeySelector).click(function () {
-  $(this).attr("data-filter");
-  console.log("🚀 ~ file", $(this).attr("data-filter"));
+  var filterValueClicked = $(this).attr("data-filter");
+  $("".concat(filterItemSelector, ".").concat(filterValueClicked)).addClass(".filter-toggle-hide");
 });
 
 var initialFilter = function initialFilter() {
