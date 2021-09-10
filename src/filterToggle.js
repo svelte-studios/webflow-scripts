@@ -49,7 +49,10 @@ $(filterKeySelector).click(function () {
   // });
   $(this).addClass("active");
   $(filterItemSelector).each(function () {
-    if ($(this).hasClass(classVar)) return;
+    console.log("🚀 ~  classVar", classVar);
+    if ($(this).hasClass(classVar)) {
+      return $(this).removeClass("filter-toggle-hide");
+    }
     $(this).addClass("filter-toggle-hide");
   });
 });
