@@ -27,6 +27,7 @@ $(filterValueSelector).each(function () {
   });
 });
 $(filterKeySelector).mouseenter(function () {
+  console.log("🚀 ~ filterKeySelector", filterKeySelector);
   var filterValueClicked = $(this).attr("data-filter");
 
   if ($(this).hasClass("active")) {
