@@ -31,6 +31,7 @@ $(filterValueSelector).each(function () {
 });
 
 $(filterKeySelector).mouseenter(function () {
+  console.log("🚀 ~ filterKeySelector", filterKeySelector);
   const filterValueClicked = $(this).attr("data-filter");
   if ($(this).hasClass("active")) {
     $(this).removeClass("active");
