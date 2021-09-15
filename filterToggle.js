@@ -43,11 +43,12 @@ $(filterKeySelector).mouseenter(function () {
   toggleFilter(filterValueClicked);
   $(this).addClass("active");
 });
-$(filterKeySelector).first(function () {
-  var filterValueClicked = $(this).attr("data-filter");
+$(document).ready(function () {
+  var first = $(filterKeySelector).first();
+  var filterValueClicked = first.attr("data-filter");
   console.log("🚀 ~ file: filterToggle.js ~ line 53 ~ filterValueClicked", filterValueClicked);
   toggleFilter(filterValueClicked);
-  $(this).addClass("active");
+  first.addClass("active");
 });
 
 var toggleFilter = function toggleFilter(classVar) {
