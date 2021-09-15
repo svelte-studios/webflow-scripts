@@ -32,10 +32,11 @@ $(filterValueSelector).each(function () {
 
 $(filterKeySelector).mouseenter(function () {
   const filterValueClicked = $(this).attr("data-filter");
-  if ($(this).hasClass("active")) {
-    $(this).removeClass("active");
-    return $(filterItemSelector).removeClass("filter-toggle-hide");
-  }
+  if ($(this).hasClass("active")) return;
+  //  {
+  //   $(this).removeClass("active");
+  //   return $(filterItemSelector).removeClass("filter-toggle-hide");
+  // }
   $(filterKeySelector).each(function () {
     if ($(this).hasClass("active")) {
       $(this).removeClass("active");
@@ -43,6 +44,12 @@ $(filterKeySelector).mouseenter(function () {
       return;
     }
   });
+  toggleFilter(filterValueClicked);
+  $(this).addClass("active");
+});
+
+$(filterKeySelector).first(function () {
+  const filterValueClicked = $(this).attr("data-filter");
   toggleFilter(filterValueClicked);
   $(this).addClass("active");
 });
