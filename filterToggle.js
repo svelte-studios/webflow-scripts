@@ -46,7 +46,6 @@ $(filterKeySelector).mouseenter(function () {
 $(document).ready(function () {
   var first = $(filterKeySelector).first();
   var filterValueClicked = first.attr("data-filter");
-  console.log("🚀 ~ file: filterToggle.js ~ line 53 ~ filterValueClicked", filterValueClicked);
   toggleFilter(filterValueClicked);
   first.addClass("active");
 });
