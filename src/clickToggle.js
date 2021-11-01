@@ -7,10 +7,7 @@ const activeItemClass = 'active';
 
 const initialFilter = function () {
   const urlFilter = url('?filter');
-  console.log(
-    '🚀 ~ file: clickToggle.js ~ line 11 ~ initialFilter ~ urlFilter',
-    urlFilter
-  );
+
   if (!urlFilter) {
     $(featuredAllContentSelector).css({ display: 'block' });
     $(featureAllItemSelector).addClass(activeItemClass);
@@ -19,10 +16,13 @@ const initialFilter = function () {
 
   $(featureListItemSelector).each(function () {
     const filterKeyText = convToFilter($(this).text());
+    console.log('🚀 ~ filterKeyText', filterKeyText);
+    console.log('🚀 ~ urlFilter', urlFilter);
     console.log(
-      '🚀 ~ file: clickToggle.js ~ line 19 ~ filterKeyText',
-      filterKeyText
+      '🚀 ~ filterKeyText === urlFilter',
+      filterKeyText === urlFilter
     );
+
     if (filterKeyText === urlFilter) {
       const listItemIndex = $(this).index();
       $(featureListSelector)
