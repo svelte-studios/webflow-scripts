@@ -6,7 +6,7 @@ var featuredAllContentSelector = '.featured-content-all';
 var featuredContentSelector = '.featured-content';
 var featureListSelector = '.feature-list';
 var activeItemClass = 'active';
-$(featuredAllContentSelector).children().eq(0).css({
+$(featuredAllContentSelector).css({
   display: 'block'
 });
 $(featureAllItemSelector).addClass(activeItemClass);
