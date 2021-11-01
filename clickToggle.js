@@ -6,9 +6,10 @@ var featuredAllContentSelector = '.featured-content-all';
 var featuredContentSelector = '.featured-content';
 var featureListSelector = '.feature-list';
 var activeItemClass = 'active';
-$(featuredContentSelector).children().eq(0).css({
+$(featuredAllContentSelector).children().eq(0).css({
   display: 'block'
 });
+$(featureAllItemSelector).addClass(activeItemClass);
 $(featureListItemSelector).click(function () {
   var listItemIndex = $(this).index();
   var allSelector = $(featuredAllContentSelector);
