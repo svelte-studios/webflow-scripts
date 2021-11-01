@@ -1,20 +1,38 @@
 "use strict";
 
+function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
+
 var featureAllItemSelector = '.feature-click-all';
 var featureListItemSelector = '.feature-click-item';
 var featuredAllContentSelector = '.featured-content-all';
 var featuredContentSelector = '.featured-click-content';
 var featureListSelector = '.feature-list';
 var activeItemClass = 'active';
-$(featuredAllContentSelector).css({
-  display: 'block'
-});
-$(featureAllItemSelector).addClass(activeItemClass);
 
 var initialFilter = function initialFilter() {
   console.log('🚀 ~ fil', url('?filter'));
-  if (url('?filter')) return '.' + url('?filter');
-  return 'all';
+  var urlFilter = url('?filter');
+
+  if (!urlFilter) {
+    $(featuredAllContentSelector).css({
+      display: 'block'
+    });
+    $(featureAllItemSelector).addClass(activeItemClass);
+    return;
+  }
+
+  $(featureListItemSelector).each(function () {
+    var filterKeyText = convToFilter($(this).text());
+
+    if (urlFilter, _readOnlyError("filterKeyText")) {
+      var listItemIndex = $(this).index();
+      $(featureListSelector).children().eq(listItemIndex).addClass(activeItemClass);
+      $(featuredContentSelector).children().eq(listItemIndex).css({
+        display: 'block'
+      });
+      return;
+    }
+  });
 };
 
 initialFilter();
