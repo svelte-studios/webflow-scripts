@@ -16,12 +16,6 @@ const initialFilter = function () {
 
   $(featureListItemSelector).each(function () {
     const filterKeyText = convToFilter($(this).text());
-    console.log('🚀 ~ filterKeyText', filterKeyText);
-    console.log('🚀 ~ urlFilter', urlFilter);
-    console.log(
-      '🚀 ~ filterKeyText === urlFilter',
-      filterKeyText === urlFilter
-    );
 
     if (filterKeyText === urlFilter) {
       const listItemIndex = $(this).index();
@@ -38,6 +32,10 @@ const initialFilter = function () {
         .children()
         .eq(listItemIndex)
         .css({ display: 'block' });
+      console.log(
+        '🚀 ~)',
+        $(featuredContentSelector).children().eq(listItemIndex)
+      );
     }
   });
 };
