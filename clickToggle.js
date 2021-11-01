@@ -3,7 +3,7 @@
 var featureAllItemSelector = '.feature-click-all';
 var featureListItemSelector = '.feature-click-item';
 var featuredAllContentSelector = '.featured-content-all';
-var featuredContentSelector = '.featured-content';
+var featuredContentSelector = '.featured-click-content';
 var featureListSelector = '.feature-list';
 var activeItemClass = 'active';
 $(featuredAllContentSelector).css({
