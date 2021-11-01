@@ -19,10 +19,7 @@ const initialFilter = function () {
 
     if (filterKeyText === urlFilter) {
       const listItemIndex = $(this).index();
-      console.log(
-        '🚀 ~ file: clickToggle.js ~ line 28 ~ listItemIndex',
-        listItemIndex
-      );
+
       $(featureListSelector)
         .children()
         .eq(listItemIndex)
@@ -32,10 +29,11 @@ const initialFilter = function () {
         .children()
         .eq(listItemIndex)
         .css({ display: 'block' });
-      console.log(
-        '🚀 ~)',
-        $(featuredContentSelector).children().eq(listItemIndex)
-      );
+
+      const allSelector = $(featuredAllContentSelector);
+
+      if (allSelector.css('display') !== 'none')
+        allSelector.css({ display: 'none' });
     }
   });
 };
