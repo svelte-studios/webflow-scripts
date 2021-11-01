@@ -5,7 +5,8 @@ const featuredContentSelector = '.featured-content';
 const featureListSelector = '.feature-list';
 const activeItemClass = 'active';
 
-$(featuredContentSelector).children().eq(0).css({ display: 'block' });
+$(featuredAllContentSelector).children().eq(0).css({ display: 'block' });
+$(featureAllItemSelector).addClass(activeItemClass);
 
 $(featureListItemSelector).click(function () {
   const listItemIndex = $(this).index();
