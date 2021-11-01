@@ -8,6 +8,14 @@ const activeItemClass = 'active';
 $(featuredAllContentSelector).css({ display: 'block' });
 $(featureAllItemSelector).addClass(activeItemClass);
 
+const initialFilter = function () {
+  console.log('🚀 ~ fil', url('?filter'));
+  if (url('?filter')) return '.' + url('?filter');
+  return 'all';
+};
+
+initialFilter();
+
 $(featureListItemSelector).click(function () {
   const listItemIndex = $(this).index();
   const allSelector = $(featuredAllContentSelector);
