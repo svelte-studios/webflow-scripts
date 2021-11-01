@@ -20,9 +20,6 @@ var initialFilter = function initialFilter() {
 
   $(featureListItemSelector).each(function () {
     var filterKeyText = convToFilter($(this).text());
-    console.log('🚀 ~ filterKeyText', filterKeyText);
-    console.log('🚀 ~ urlFilter', urlFilter);
-    console.log('🚀 ~ filterKeyText === urlFilter', filterKeyText === urlFilter);
 
     if (filterKeyText === urlFilter) {
       var listItemIndex = $(this).index();
@@ -31,6 +28,7 @@ var initialFilter = function initialFilter() {
       $(featuredContentSelector).children().eq(listItemIndex).css({
         display: 'block'
       });
+      console.log('🚀 ~)', $(featuredContentSelector).children().eq(listItemIndex));
     }
   });
 };
