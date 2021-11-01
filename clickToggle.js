@@ -10,6 +10,14 @@ $(featuredAllContentSelector).css({
   display: 'block'
 });
 $(featureAllItemSelector).addClass(activeItemClass);
+
+var initialFilter = function initialFilter() {
+  console.log('🚀 ~ fil', url('?filter'));
+  if (url('?filter')) return '.' + url('?filter');
+  return 'all';
+};
+
+initialFilter();
 $(featureListItemSelector).click(function () {
   var listItemIndex = $(this).index();
   var allSelector = $(featuredAllContentSelector);
