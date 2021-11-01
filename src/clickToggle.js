@@ -1,7 +1,7 @@
 const featureAllItemSelector = '.feature-click-all';
 const featureListItemSelector = '.feature-click-item';
 const featuredAllContentSelector = '.featured-content-all';
-const featuredContentSelector = '.featured-content';
+const featuredContentSelector = '.featured-click-content';
 const featureListSelector = '.feature-list';
 const activeItemClass = 'active';
 
