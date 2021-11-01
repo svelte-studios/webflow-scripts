@@ -16,7 +16,7 @@ const initialFilter = function () {
 
   $(featureListItemSelector).each(function () {
     const filterKeyText = convToFilter($(this).text());
-    if ((filterKeyText = urlFilter)) {
+    if (filterKeyText === urlFilter) {
       const listItemIndex = $(this).index();
       $(featureListSelector)
         .children()
