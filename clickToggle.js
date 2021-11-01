@@ -26,11 +26,11 @@ var initialFilter = function initialFilter() {
 
     if (filterKeyText === urlFilter) {
       var listItemIndex = $(this).index();
+      console.log('🚀 ~ file: clickToggle.js ~ line 28 ~ listItemIndex', listItemIndex);
       $(featureListSelector).children().eq(listItemIndex).addClass(activeItemClass);
       $(featuredContentSelector).children().eq(listItemIndex).css({
         display: 'block'
       });
-      return;
     }
   });
 };
