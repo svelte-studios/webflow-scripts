@@ -7,6 +7,10 @@ $(featuredContentSelector).children().eq(0).css({ display: 'block' });
 
 $(featureListItemSelector).click(function () {
   const listItemIndex = $(this).index();
+  console.log(
+    '🚀 ~ file: clickToggle.js ~ line 10 ~ listItemIndex',
+    listItemIndex
+  );
 
   $(featuredContentSelector)
     .children()
