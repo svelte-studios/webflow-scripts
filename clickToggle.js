@@ -9,7 +9,6 @@ var activeItemClass = 'active';
 
 var initialFilter = function initialFilter() {
   var urlFilter = url('?filter');
-  console.log('🚀 ~ file: clickToggle.js ~ line 11 ~ initialFilter ~ urlFilter', urlFilter);
 
   if (!urlFilter) {
     $(featuredAllContentSelector).css({
@@ -21,7 +20,9 @@ var initialFilter = function initialFilter() {
 
   $(featureListItemSelector).each(function () {
     var filterKeyText = convToFilter($(this).text());
-    console.log('🚀 ~ file: clickToggle.js ~ line 19 ~ filterKeyText', filterKeyText);
+    console.log('🚀 ~ filterKeyText', filterKeyText);
+    console.log('🚀 ~ urlFilter', urlFilter);
+    console.log('🚀 ~ filterKeyText === urlFilter', filterKeyText === urlFilter);
 
     if (filterKeyText === urlFilter) {
       var listItemIndex = $(this).index();
