@@ -23,12 +23,14 @@ var initialFilter = function initialFilter() {
 
     if (filterKeyText === urlFilter) {
       var listItemIndex = $(this).index();
-      console.log('🚀 ~ file: clickToggle.js ~ line 28 ~ listItemIndex', listItemIndex);
       $(featureListSelector).children().eq(listItemIndex).addClass(activeItemClass);
       $(featuredContentSelector).children().eq(listItemIndex).css({
         display: 'block'
       });
-      console.log('🚀 ~)', $(featuredContentSelector).children().eq(listItemIndex));
+      var allSelector = $(featuredAllContentSelector);
+      if (allSelector.css('display') !== 'none') allSelector.css({
+        display: 'none'
+      });
     }
   });
 };
