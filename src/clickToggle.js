@@ -5,13 +5,31 @@ const featuredContentSelector = '.featured-click-content';
 const featureListSelector = '.feature-list';
 const activeItemClass = 'active';
 
-$(featuredAllContentSelector).css({ display: 'block' });
-$(featureAllItemSelector).addClass(activeItemClass);
-
 const initialFilter = function () {
   console.log('🚀 ~ fil', url('?filter'));
-  if (url('?filter')) return '.' + url('?filter');
-  return 'all';
+  const urlFilter = url('?filter');
+  if (!urlFilter) {
+    $(featuredAllContentSelector).css({ display: 'block' });
+    $(featureAllItemSelector).addClass(activeItemClass);
+    return;
+  }
+
+  $(featureListItemSelector).each(function () {
+    const filterKeyText = convToFilter($(this).text());
+    if ((filterKeyText = urlFilter)) {
+      const listItemIndex = $(this).index();
+      $(featureListSelector)
+        .children()
+        .eq(listItemIndex)
+        .addClass(activeItemClass);
+
+      $(featuredContentSelector)
+        .children()
+        .eq(listItemIndex)
+        .css({ display: 'block' });
+      return;
+    }
+  });
 };
 
 initialFilter();
